@@ -1,0 +1,30 @@
+
+  *{margin:0; padding:0;}
+  ul,li{list-style: none;}
+  a{color:#000; text-decoration: none;}
+  #wrapper{width:1280px; margin:0 auto; margin-top:50px;}
+  h1{margin-bottom:30px;}
+
+  /****** 탭기능 ******/
+  .tabList{width:100%; display: flex; background: #f1f1f1; }
+  .tabList li a{width:100%;  padding:20px; display:block;box-sizing:border-box; transition: all 0.3s; }
+  .tabList li a:hover{background:#ddd; }
+  .tabList li.active a{background: #ccc;}
+  .tabcontants{width:100%; box-sizing: border-box; padding:20px;border:1px solid #ddd; display: none;}
+
+  /****** 아코디언 ******/
+  .panel-qustion{width:100%; margin-bottom:30px; position: relative;}
+  .panel-qustion.active .panel-body{ display: block;}
+  .panel-qustion .panel-heading{width:100%; padding:10px; color:#fff; background: #333; box-sizing: border-box; cursor: pointer;}
+  .panel-qustion .panel-body{overflow:hidden; background: #d8d8d8;  box-sizing: border-box; display: none; padding:20px;}
+
+  /****** 이미지 모달 팝업 ******/
+  .gallery{display: flex; flex-wrap: wrap; justify-content: center; gap:10px;}
+  .gallery li img{transition: opacity 0.3s;}
+  .gallery li img:hover{opacity: 0.5;}
+  #lightbox-overlay{opacity:0; position: fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%; background: rgba(0,0,0,0.5); visibility: hidden;}
+  #lightbox-overlay.visible{opacity: 1; visibility: visible;}
+  #lightbox-image{position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);}
+
+  /** 스크롤 위로 올라가기버튼 **/
+  .goTop{width:80px; height:80px; background: #222;position: fixed; bottom:30px; right:30px; color:#fff; font-size:30px; text-align:center; line-height: 80px; font-weight:600; cursor: pointer;}
