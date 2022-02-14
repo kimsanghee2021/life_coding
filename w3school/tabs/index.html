@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOW TO - Tabs</title>
+    <style>
+        *{margin:0; padding:0;}
+        ul,li{list-style: none;}
+        a{color:#000; text-decoration: none;}
+        #wrapper{width:1280px; margin:0 auto;}
+        .tabList{width:100%; display: flex; background: #f1f1f1; }
+        .tabList li a{width:100%;  padding:20px; display:block;box-sizing:border-box; transition: all 0.3s; }
+        .tabList li a:hover{background:#ddd; }
+        .tabList li.active a{background: #ccc;}
+        .tabcontants{width:100%; box-sizing: border-box; padding:20px;border:1px solid #ddd; display: none;}
+    </style>
+</head>
+<body>
+    <section id="wrapper">
+        <ul class="tabList">
+            <li class="active"><a href="javascript:;">London</a></li>
+            <li><a href="javascript:;">Paris</a></li>
+            <li><a href="javascript:;">Tokyo</a></li>
+        </ul>
+        <div>
+            <div class="tabcontants">
+                <h3>London</h3>
+                <p>London is the capital city of England.</p>
+            </div>
+            <div class="tabcontants">
+                <h3>Paris</h3>
+                <p>Paris is the capital of France.</p>
+            </div>
+            <div class="tabcontants">
+                <h3>Tokyo</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+    </section>
+
+    <script>
+        let tabList = document.querySelectorAll('.tabList li');
+        let tabcontant = document.getElementsByClassName('tabcontants');
+        console.log(tabList, tabcontant);
+
+
+        //해당 컨텐츠 내용이 노출되도록 하기
+        function showContent(num){
+            for(tc of tabcontant){
+                tc.style.display = 'none';
+            }
+            tabcontant[num].style.display = 'block';
+        }
+        showContent(0);
+
+        tabList.forEach(function(menu, idx){
+            console.log(idx);
+            menu.addEventListener('click',function(){
+                this.classList.add('active');
+                for(let sibilngs of  this.parentNode.children){
+                    if(this !== sibilngs){
+                        sibilngs.classList.remove('active');
+                    }
+                    console.log(sibilngs);
+                }
+                showContent(idx);
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // function showContants(num){
+        //     for(tc of tabcontant ){
+        //        //console.log(tc);
+        //         tc.style.display = 'none';
+        //     }
+        //     tabcontant[num].style.display = 'block';
+        // }
+        // showContants(0);
+
+        // tabList.forEach(function(menu,idx){
+        //     //console.log(menu);
+        //     menu.addEventListener('click',function(){
+        //         this.classList.add('active');
+        //         for(let siblings of this.parentNode.children){
+        //             console.log(siblings);
+        //             if(this!== siblings){
+        //                 siblings.classList.remove('active');
+        //             }
+        //         }
+        //         showContants(idx);
+        //     });
+        // });
+    </script>
+</body>
+</html>
